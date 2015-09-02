@@ -1,0 +1,698 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WindowsEtcetera</name>
+    </assembly>
+    <members>
+        <member name="T:MegapopGames.Admob.AdErrorCode">
+            <summary>
+            An enumeration of the various types of errors that might occur while fetching an ad.
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Admob.AdErrorCode.NoError">
+            <summary>
+            Unknown Error
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Admob.AdErrorCode.InvalidRequest">
+            <summary>
+            The ad request is invalid.
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Admob.AdErrorCode.NoFill">
+            <summary>
+            The ad request is successful, but no ad was returned due to lack of ad inventory.
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Admob.AdErrorCode.NetworkError">
+            <summary>
+            The ad request was unsuccessful due to network connectivity.
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Admob.AdErrorCode.InternalError">
+            <summary>
+            Something happened internally; for instance, the Activity may have been destroyed mid-refresh.
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Admob.AdErrorCode.StaleInterstitial">
+            <summary>
+            StaleInterstitial
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Admob.AdErrorCode.Cancelled">
+            <summary>
+            Cancelled
+            </summary>
+        </member>
+        <member name="T:MegapopGames.Admob.Admob">
+            <summary>
+            Google Ads
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Admob.Admob.FailedToReceiveAd">
+            <summary>
+            Raised after an interstitial/overlay is dismissed.
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Admob.Admob.DismissingAd">
+            <summary>
+            Raised in case an ad could not be loaded successfully due to either of the following
+                        reasons:
+                        - There was a network issue.
+                        - The request made was determined to be invalid.
+                        - Successful ad request, but no ad returned due to lack of inventory.
+                        - Something went wrong internally.
+            
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Admob.Admob.LeavingApplication">
+            <summary>
+            Raised when the action taken by the user caused an external app to open.
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Admob.Admob.ReceivedAd">
+            <summary>
+            Raised when an ad is successfully received.
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Admob.Admob.ShowOverlay">
+            <summary>
+            Raised before an interstitial/overlay is shown.
+            </summary>
+        </member>
+        <member name="M:MegapopGames.Admob.Admob.LoadInterstitial(System.String,System.Boolean)">
+            <summary>
+            Sends out a request to load an interstitial. Note that testMode doesn't yet work in the AdMob SDK.
+            </summary>
+            <param name="adUnitId"></param>
+            <param name="enableTestMode"></param>
+        </member>
+        <member name="M:MegapopGames.Admob.Admob.ShowInterstitial">
+            <summary>
+            Shows an interstitial as long as one is loaded
+            </summary>
+        </member>
+        <member name="M:MegapopGames.Admob.Admob.LoadVideo(System.String,System.Boolean)">
+            <summary>
+            Load Video Ad
+            </summary>
+            <param name="adUnitId"></param>
+            <param name="enableTestMode"></param>
+        </member>
+        <member name="M:MegapopGames.Admob.Admob.ShowVideo">
+            <summary>
+            Show Video Ad
+            </summary>
+        </member>
+        <member name="T:MegapopGames.EtceteraWindows">
+            <summary>
+            Windows Utility Class
+            </summary>
+        </member>
+        <member name="T:MegapopGames.Flurry">
+            <summary>
+            Provides all available methods for defining and reporting Analytics from use of your app.
+            Set of methods that allow developers to capture detailed, 
+            aggregate information regarding the use of their app by end users.
+            </summary>
+        </member>
+        <member name="M:MegapopGames.Flurry.StartSession(System.String)">
+            <summary>
+            Start a Flurry session for the project denoted by apiKey.
+            </summary>
+            <param name="apiKey"></param>
+        </member>
+        <member name="M:MegapopGames.Flurry.EndSession">
+            <summary>
+            Ends a Flurry session.
+            </summary>
+        </member>
+        <member name="M:MegapopGames.Flurry.LogError(System.String,System.Exception)">
+            <summary>
+            This is an optional method that augments the debug logs with exceptions that occur during the session. 
+            You must both capture exceptions to Flurry and set debug logging to enabled for this method to display information to the console. 
+            </summary>
+            <param name="eventName"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:MegapopGames.Flurry.LogPageView">
+            <summary>
+            Count page views.
+            </summary>
+        </member>
+        <member name="M:MegapopGames.Flurry.SetAge(System.Int32)">
+            <summary>
+            Set your user's age in years. 
+            </summary>
+            <param name="age"></param>
+        </member>
+        <member name="M:MegapopGames.Flurry.SetGender(MegapopGames.Flurry.Gender)">
+            <summary>
+            Set your user's gender. 
+            </summary>
+            <param name="gender"></param>
+        </member>
+        <member name="M:MegapopGames.Flurry.SetLocation(System.Double,System.Double,System.Single)">
+            <summary>
+            Set the location of the session. 
+            </summary>
+            <param name="latitude"></param>
+            <param name="longitude"></param>
+            <param name="accuracy"></param>
+        </member>
+        <member name="M:MegapopGames.Flurry.SetReportUrl(System.String)">
+            <summary>
+            Sets the URL used for reporting events
+            </summary>
+            <param name="serverURL"></param>
+        </member>
+        <member name="M:MegapopGames.Flurry.SetSecureTransportEnabled">
+            <summary>
+            SetSecureTransportEnabled
+            
+            This is an optional method that sends data over an SSL connection when enabled. 
+            The default value is NO.
+            </summary>
+        </member>
+        <member name="M:MegapopGames.Flurry.SetSessionContinueSeconds(System.Int32)">
+            <summary>
+            Set the timeout for expiring a Flurry session.
+            
+            This is an optional method that sets the time the app may be in the background before starting a new session upon resume. 
+            The default value for the session timeout is 10 seconds in the background.
+            </summary>
+            <param name="seconds"></param>
+        </member>
+        <member name="M:MegapopGames.Flurry.SetUserId(System.String)">
+            <summary>
+            Assign a unique id for a user in your app. 
+            </summary>
+            <param name="userId"></param>
+        </member>
+        <member name="M:MegapopGames.Flurry.SetVersion(System.String)">
+            <summary>
+            Explicitly specifies the App Version that Flurry will use to group Analytics data. 
+            </summary>
+            <param name="version"></param>
+        </member>
+        <member name="M:MegapopGames.Flurry.LogEvent(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Records a custom parameterized event specified by eventName with parameters. 
+            </summary>
+            <param name="eventName"></param>
+            <param name="param"></param>
+        </member>
+        <member name="M:MegapopGames.Flurry.LogEvent(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Records a custom parameterized event specified by eventName with parameters. 
+            </summary>
+            <param name="eventName"></param>
+            <param name="paramName"></param>
+            <param name="paramValue"></param>
+            <param name="paramName2"></param>
+            <param name="paramValue2"></param>
+            <param name="paramName3"></param>
+            <param name="paramValue3"></param>
+            <param name="paramName4"></param>
+            <param name="paramValue4"></param>
+        </member>
+        <member name="M:MegapopGames.Flurry.LogTimedEvent(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Records a custom parameterized timed event specified by eventName with parameters. 
+            </summary>
+            <param name="eventName"></param>
+            <param name="param"></param>
+        </member>
+        <member name="M:MegapopGames.Flurry.LogTimedEvent(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Records a custom parameterized timed event specified by eventName with parameters. 
+            </summary>
+            <param name="eventName"></param>
+            <param name="paramName"></param>
+            <param name="paramValue"></param>
+            <param name="paramName2"></param>
+            <param name="paramValue2"></param>
+            <param name="paramName3"></param>
+            <param name="paramValue3"></param>
+            <param name="paramName4"></param>
+            <param name="paramValue4"></param>
+        </member>
+        <member name="M:MegapopGames.Flurry.EndTimedEvent(System.String)">
+            <summary>
+            Ends a timed event specified by eventName and optionally updates parameters with parameters. 
+            </summary>
+            <param name="eventName"></param>
+        </member>
+        <member name="M:MegapopGames.Flurry.EndTimedEvent(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Ends a timed event specified by eventName and optionally updates parameters with parameters. 
+            </summary>
+            <param name="eventName"></param>
+            <param name="param"></param>
+        </member>
+        <member name="T:MegapopGames.Flurry.Gender">
+            <summary>
+            Gender of the player
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Flurry.Gender.Unknown">
+            <summary>
+            Unknown Gender
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Flurry.Gender.Female">
+            <summary>
+            Female
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Flurry.Gender.Male">
+            <summary>
+            Male
+            </summary>
+        </member>
+        <member name="M:MegapopGames.HockeyApp.HockeyApp.Configure(System.String,System.String,System.String,System.String,System.Func{System.Exception,System.String},System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="appId">are not optional</param>
+            <param name="appVersion">are not optional</param>
+            <param name="userID">optional submitting an logged on username and contactinfo</param>
+            <param name="contactInformation">optional submitting an logged on username and contactinfo</param>
+            <param name="descriptionLoader">is a lambda for submitting additional information like an event log</param>
+            <param name="apiBase">is https://rink.hockeyapp.net/api/2/ and can be overwritten</param>
+            <param name="userAgentString"></param>
+        </member>
+        <member name="M:MegapopGames.HockeyApp.HockeyApp.SendCrashes(System.Action)">
+            <summary>
+            Crashes are deleted by SendCrashesNowAsync() when they are submitted to HockeyApp
+            </summary>
+            <param name="done"></param>
+        </member>
+        <member name="M:MegapopGames.HockeyApp.HockeyApp.PostFeedback(System.String,System.String,System.String,System.String,System.Action)">
+            <summary>
+            Posts a new feedback
+            </summary>
+            <param name="message"></param>
+            <param name="email"></param>
+            <param name="subject"></param>
+            <param name="name"></param>
+            <param name="done"></param>
+        </member>
+        <member name="P:MegapopGames.HockeyApp.HockeyApp.IsCrashesAvailable">
+            <summary>
+            The user can be asked, if the crashed should be sent using
+            </summary>
+        </member>
+        <member name="P:MegapopGames.HockeyApp.HockeyApp.CrashesAvailableCount">
+            <summary>
+            The user can be asked, if the crashed should be sent using
+            </summary>
+        </member>
+        <member name="T:MegapopGames.MetroStore.LicenseInformation">
+            <summary>
+            Provides access to the current app's license metadata
+            
+            </summary>
+        </member>
+        <member name="M:MegapopGames.MetroStore.LicenseInformation.ToString">
+            <summary>
+            Override
+            
+            </summary>
+            
+            <returns/>
+        </member>
+        <member name="P:MegapopGames.MetroStore.LicenseInformation.expirationDate">
+            <summary>
+            Gets the license expiration date and time relative to the system clock
+            
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.LicenseInformation.isActive">
+            <summary>
+            Gets the value that indicates whether the license is active
+            
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.LicenseInformation.isTrial">
+            <summary>
+            Gets the value that indicates whether the license is a trial license
+            
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.LicenseInformation.productLicenses">
+            <summary>
+            Gets the associative list of licenses for the app's features that can be bought through an in-app purchase
+            
+            </summary>
+        </member>
+        <member name="T:MegapopGames.MetroStore.ListingInformation">
+            <summary>
+            Provides the listing info that describes the app in the Windows Store.
+            </summary>
+        </member>
+        <member name="M:MegapopGames.MetroStore.ListingInformation.ToString">
+            <summary>
+            Override
+            
+            </summary>
+            
+            <returns/>
+        </member>
+        <member name="P:MegapopGames.MetroStore.ListingInformation.ageRating">
+            <summary>
+            Gets the age rating for the app.
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.ListingInformation.currentMarket">
+            <summary>
+            Gets the value that indicates the customer's market, such as en-us, that will be used for transactions in the current session.
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.ListingInformation.description">
+            <summary>
+            Gets the app's description in the current market.
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.ListingInformation.formattedPrice">
+            <summary>
+            Gets the app's purchase price formatted for the current market and currency.
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.ListingInformation.name">
+            <summary>
+            Gets the app's name in the current market.
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.ListingInformation.productListings">
+            <summary>
+            Gets information about the features and products that can be bought by making in-app purchases.
+            </summary>
+        </member>
+        <member name="T:MegapopGames.MetroStore.ProductLicense">
+            <summary>
+            Provides info about a license that is associated with an in-app product.
+            </summary>
+        </member>
+        <member name="M:MegapopGames.MetroStore.ProductLicense.ToString">
+            <summary>
+            Override
+            
+            </summary>
+            
+            <returns/>
+        </member>
+        <member name="P:MegapopGames.MetroStore.ProductLicense.expirationDate">
+            <summary>
+            Gets the expiration date and time of the license
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.ProductLicense.isActive">
+            <summary>
+            Gets the value that indicates whether the feature's license is active
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.ProductLicense.productId">
+            <summary>
+            Gets the ID of an app's in-app offer
+            </summary>
+        </member>
+        <member name="M:MegapopGames.MetroStore.ProductListing.ToString">
+            <summary/>
+            
+            <returns/>
+        </member>
+        <member name="P:MegapopGames.MetroStore.ProductListing.formattedPrice">
+            <summary>
+            Gets the app's purchase price with the appropriate formatting for the current market.
+            
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.ProductListing.name">
+            <summary>
+            Gets the descriptive name of the product or feature that can be shown to customers in the current market.
+            
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.ProductListing.productId">
+            <summary>
+            Gets the ID of an app's feature or product.
+            
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.ProductListing.productType">
+            <summary>
+            Gets the type of this product. Possible values are defined by ProductType
+            
+            </summary>
+        </member>
+        <member name="T:MegapopGames.MetroStore.ProductPurchaseStatus">
+            <summary>
+            Defines values used to indicate the transaction status when purchasing an in-app product.
+            </summary>
+        </member>
+        <member name="F:MegapopGames.MetroStore.ProductPurchaseStatus.Succeeded">
+            <summary>
+            The transaction succeeded and the user has been notified.
+            </summary>
+        </member>
+        <member name="F:MegapopGames.MetroStore.ProductPurchaseStatus.AlreadyPurchased">
+            <summary>
+            The transaction did not complete because this in-app product has already been purchased by the user, and it cannot be purchased again.
+            </summary>
+        </member>
+        <member name="F:MegapopGames.MetroStore.ProductPurchaseStatus.NotFulfilled">
+            <summary>
+            The transaction did not complete because the last purchase of this consumable in-app product has not been reported as fulfilled to the Windows Store.
+            </summary>
+        </member>
+        <member name="F:MegapopGames.MetroStore.ProductPurchaseStatus.NotPurchased">
+            <summary>
+            The purchase did not occur because the user decided not to complete the transaction (or the transaction failed for other reasons).
+            </summary>
+        </member>
+        <member name="T:MegapopGames.MetroStore.ProductReceipt">
+            <summary>
+            Each Windows Store transaction that results in a successful product purchase can optionally return a transaction receipt. This receipts provides information about the listed product and monetary cost to the customer.
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.ProductReceipt.Id">
+            <summary>
+             Identifies the purchase.
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.ProductReceipt.AppId">
+            <summary>
+            Identifies the app through which the user made the purchase.
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.ProductReceipt.ProductId">
+            <summary>
+            Identifies the product purchased.
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.ProductReceipt.ProductType">
+            <summary>
+            Determines the product type. Currently only supports a value of Durable.
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.ProductReceipt.PurchaseDate">
+            <summary>
+            Date when the purchase occurred.
+            </summary>
+        </member>
+        <member name="T:MegapopGames.MetroStore.ProductType">
+            <summary>
+            Specifies the product type for a product
+            </summary>
+        </member>
+        <member name="F:MegapopGames.MetroStore.ProductType.Unknown">
+            <summary>
+            The product type is unknown.
+            </summary>
+        </member>
+        <member name="F:MegapopGames.MetroStore.ProductType.Durable">
+            <summary>
+            A durable product.
+            </summary>
+        </member>
+        <member name="F:MegapopGames.MetroStore.ProductType.Consumable">
+            <summary>
+            A consumable product.
+            </summary>
+        </member>
+        <member name="T:MegapopGames.MetroStore.PurchaseResults">
+            <summary>
+            Contains information detailing the results of an in-app product purchase transaction.
+            </summary>
+        </member>
+        <member name="M:MegapopGames.MetroStore.PurchaseResults.ToString">
+            <summary>
+            Override
+            
+            </summary>
+            
+            <returns/>
+        </member>
+        <member name="P:MegapopGames.MetroStore.PurchaseResults.offerId">
+            <summary>
+            A unique ID used to identify a specific in-app purchase item within a large purchase catalog
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.PurchaseResults.receiptXml">
+            <summary>
+            A full receipt that provides a transaction history for the in-app purchase.
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.PurchaseResults.ProductReceipt">
+            <summary>
+            The receipt
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.PurchaseResults.status">
+            <summary>
+            The current state of the in-app purchase
+            </summary>
+        </member>
+        <member name="P:MegapopGames.MetroStore.PurchaseResults.transactionId">
+            <summary>
+            A unique transaction ID associated with a purchase of the consumable
+            </summary>
+        </member>
+        <member name="M:MegapopGames.MetroStore.Store.isInTrialMode">
+            <summary>
+            Fetches the license information and returns the isTrial bool
+            
+            </summary>
+            
+            <returns/>
+        </member>
+        <member name="M:MegapopGames.MetroStore.Store.getLicenseInformation">
+            <summary>
+            Fetches the current LicenseInformation. If in testing mode it will be from the app simulator.
+            
+            </summary>
+            
+            <returns/>
+        </member>
+        <member name="M:MegapopGames.MetroStore.Store.LoadTest(System.UInt32,System.String,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,MegapopGames.MetroStore.ProductListing})">
+            <summary>
+            Loads test products
+            </summary>
+            <param name="ageRating"></param>
+            <param name="currentMarket"></param>
+            <param name="description"></param>
+            <param name="formattedPrice"></param>
+            <param name="name"></param>
+            <param name="products"></param>
+        </member>
+        <member name="M:MegapopGames.MetroStore.Store.LoadTest(System.UInt32,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Loads test products
+            </summary>
+            <param name="ageRating"></param>
+            <param name="currentMarket"></param>
+            <param name="description"></param>
+            <param name="formattedPrice"></param>
+            <param name="name"></param>
+            <param name="xml"></param>
+        </member>
+        <member name="M:MegapopGames.MetroStore.Store.getProductLicense(System.String)">
+            <summary>
+            Gets a product license for the given productId. Returns null if no lincese exists for the product.
+            
+            </summary>
+            <param name="productId"/>
+            <returns/>
+        </member>
+        <member name="M:MegapopGames.MetroStore.Store.getProductReceipts(System.Collections.Generic.List{System.String},System.Action{System.Collections.Generic.List{MegapopGames.MetroStore.ProductReceipt},System.Exception})">
+            <summary>
+            Gets the product receipt for the given productId.
+            </summary>
+            <param name="productIds"></param>
+            <param name="onComplete"></param>
+        </member>
+        <member name="M:MegapopGames.MetroStore.Store.loadListingInformation(System.Action{MegapopGames.MetroStore.ListingInformation,System.Exception})">
+            <summary>
+            Loads listing information and fires completingHandler with the data once loading completes
+            </summary>
+            <param name="onComplete"></param>
+        </member>
+        <member name="M:MegapopGames.MetroStore.Store.requestProductPurchase(System.String,System.Action{MegapopGames.MetroStore.PurchaseResults,System.Exception})">
+            <summary>
+            Requests a purchase of the application. completionHandler gets called with either true or false indicating if
+                        the app was purchased.
+            
+            </summary>
+        </member>
+        <member name="M:MegapopGames.MetroStore.Store.reportConsumableFulfillment(System.String,System.Guid,System.Action{MegapopGames.MetroStore.FulfillmentResult,System.Exception})">
+            <summary>
+            Reports a consumable as fullfilled. You should call this once you have granted the consumable to the player.
+            
+            </summary>
+            <param name="productId"/><param name="transactionId"/><param name="onComplete"/>
+        </member>
+        <member name="E:MegapopGames.MetroStore.Store.licenseChangedEvent">
+            <summary>
+            Raises a notification event when the status of the app's license changes.
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Roaming.RoamingSettings.DataChanged">
+            <summary>
+            Occurs when roaming application data is synchronized.
+            </summary>
+        </member>
+        <member name="T:MegapopGames.Social.WebAuthenticationResult">
+            <summary>
+            Indicates the result of the authentication operation.
+            </summary>
+        </member>
+        <member name="P:MegapopGames.Social.WebAuthenticationResult.ResponseData">
+            <summary>
+            Contains the protocol data when the operation successfully completes.
+            </summary>
+            
+            <returns>
+            The returned data.
+            </returns>
+        </member>
+        <member name="P:MegapopGames.Social.WebAuthenticationResult.ResponseErrorDetail">
+            <summary>
+            Returns the HTTP error code when ResponseStatus is equal to WebAuthenticationStatus.ErrorHttp. This is only available if there is an error.
+            </summary>
+            
+            <returns>
+            The specific HTTP error, for example 400.
+            </returns>
+        </member>
+        <member name="P:MegapopGames.Social.WebAuthenticationResult.ResponseStatus">
+            <summary>
+            Contains the status of the asynchronous operation when it completes.
+            </summary>
+            
+            <returns>
+            One of the enumerations.
+            </returns>
+        </member>
+        <member name="T:MegapopGames.Social.WebAuthenticationStatus">
+            <summary>
+            Contains the status of the authentication operation.
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Social.WebAuthenticationStatus.Success">
+            <summary>
+            The operation succeeded, and the response data is available.
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Social.WebAuthenticationStatus.UserCancel">
+            <summary>
+            The operation was canceled by the user.
+            </summary>
+        </member>
+        <member name="F:MegapopGames.Social.WebAuthenticationStatus.ErrorHttp">
+            <summary>
+            The operation failed because a specific HTTP error was returned, for example 404.
+            </summary>
+        </member>
+    </members>
+</doc>
